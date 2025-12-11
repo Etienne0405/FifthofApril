@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from flask_mail import Mail, Message # ⬅️ NEW: Import Mail functionality
+from flask_mail import Mail, Message 
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -8,9 +8,10 @@ app = Flask(__name__)
 #  FLASK-MAIL CONFIGURATION 
 # ==================================
 app.config['MAIL_SERVER'] = 'smtp.gmail.com' 
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True  # Enable TLS encryption
-# Replace with YOUR Email Address and App Password
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_TLS'] = False  
+app.config('MAIL_USE_SSL') = True
+
 app.config['MAIL_USERNAME'] = 'maria.etienne.official@gmail.com'
 app.config['MAIL_PASSWORD'] = 'vpmwiyissaaaphuc' 
 app.config['MAIL_DEFAULT_SENDER'] = 'maria.etienne.official@gmail.com'
