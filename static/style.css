@@ -1,0 +1,121 @@
+/* ======================================= */
+/* 1. GLOBAL STYLES & LAYOUT (BODY/HTML)   */
+/* ======================================= */
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    /* Full-page background gradient setup */
+    background: linear-gradient(90deg, #c79494, #7c8655);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    /* Flex container for full height layout (header-content-footer) */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content wrapper needed for sticky footer logic */
+.main-content-wrapper {
+    flex-grow: 1; 
+}
+
+/* ======================================= */
+/* 2. NAVIGATION (NAVBAR)                  */
+/* ======================================= */
+
+.navbar {
+    background: linear-gradient(90deg, #000000, #202c26);
+}
+
+.navbar .navbar-brand, 
+.navbar .nav-link {
+    color: #e2e2e2 !important;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+    color: #daa0a0 !important;
+}
+
+.navbar .nav-link.d-inline {
+    padding-right: 10px;
+    padding-left: 10px;  
+}
+
+/* Verwijder de scheider bij het laatste element */
+.navbar div > .nav-link.d-inline:last-child {
+    border-right: none;
+}
+
+/* ======================================= */
+/* 3. HERO SECTION (HOMEPAGE BANNER)       */
+/* ======================================= */
+
+.hero {
+    height: 150vh;
+    background-image: url('/static/images/Maria_en_etienne4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    position: relative; /* For positioning the photo credit */
+}
+
+/* Photo Credit (Bottom Right Position) */
+.photo-credit {
+    position: absolute;
+    bottom: 0px; /* Spacing from the bottom edge */
+    right: 0px; /* Spacing from the right edge */
+    padding: 0px, 0px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    line-height: 1; 
+}
+
+/* Explicitly target the link to force small font size and styling */
+.photo-credit a {
+    color: #e2e2e2;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.7rem; /* Forced smaller font size */
+    display: block; 
+}
+
+.photo-credit a:hover {
+    color: #daa0a0;
+}
+
+/* ======================================= */
+/* 4. CONTENT ELEMENTS (e.g., LISTS)       */
+/* ======================================= */
+
+.list-group-item {
+    background: #00000040;
+    color: #f2f2f2;
+    border: 1px solid #ffffff20;
+    font-size: 1.1rem;
+}
+
+.list-group-item strong {
+    color: #ffd5d5;
+}
+
+/* ======================================= */
+/* 5. FOOTER                               */
+/* ======================================= */
+
+footer.footer {
+    background: #00000090;
+    color: #e2e2e2;
+    padding: 10px 0;
+    font-size: 1rem;
+}
