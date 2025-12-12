@@ -1,0 +1,31 @@
+.navbar {
+    background: rgba(0, 0, 0, 0.75) !important;
+    color: #e2e2e2;
+    padding: 18px 0;
+    font-size: 1rem;
+    margin: 0;
+    width: 100%;
+    position: fixed; /* bovenaan viewport */
+    top: 0;          /* start van de pagina */
+    z-index: 10;     /* correct */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #e2e2e2 !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+    color: #daa0a0 !important;
+}
+
+.navbar .nav-link.d-inline {
+    padding: 0 12px;
+}
+
+.navbar div > .nav-link.d-inline:last-child {
+    border-right: none;
+}

@@ -1,70 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>About Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_aboutus.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar/navbar.css')}}">
+    <style>
+        /* ===== Fullpage, no scroll ===== */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* disables scroll */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(90deg, #c79494, #7c8655);
+            color: #e2e2e2;
+        }
+
+        .main-content-wrapper {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Flex container for text + slideshow */
+        .content-flex {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            height: 80%;
+            gap: 40px;
+        }
+
+        /* Left text column */
+        .about-text {
+            flex: 1;
+            overflow: auto; /* allow text scrolling if too long */
+        }
+
+        .about-text h1 {
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Right slideshow column */
+        .slideshow-container {
+            flex: 1;
+            position: relative;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 12px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background: rgba(0,0,0,0.5);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        footer.footer {
+            background: rgba(0,0,0,0.7);
+            color: #e2e2e2;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-                <a class="navbar-brand" href="{{ url_for('index') }}">Fifth of April</a>
-        <div>
-                        <a class="nav-link d-inline" href="{{ url_for('index') }}">Homepage</a>
-            <a class="nav-link d-inline" href="{{ url_for('gigs') }}">Gigs</a>
-            <a class="nav-link d-inline" href="{{ url_for('contact') }}">Contact</a>
-        </div>
-    </div>
-</nav>
+
+<!-- NAVBAR -->
+<div id="navbar-container"></div>
+<script src="/static/navbar/navbar.js" defer></script>
 
 <div class="main-content-wrapper">
 
-    <div class="container mt-5">
-        <h1>About Us</h1>
-        <p>We are Maria and Etienne, and together we form the dynamic duo band, Fifth of April.</p>
-        <p>While we love creating and playing our original music, we also enjoy performing a wide range of covers.</p>
-        <p>Our style primarily focuses on pop songs, singer-songwriter, and indie-rock music.</p>
-        <p>Our name, Fifth of April, is no coincidence, we were both born on the same date. I guess you can fill that one in.</p>
-    </div>
+    <div class="content-flex">
 
-    <div class="container mt-5">
-        <h1 class="mb-4">Pictures</h1>
-        <p class="lead mb-3" style="color:#cccccc;">
-                        <a href="https://www.instagram.com/rob_verschoor?igsh=OXEwMmRoczM4a3Y=" target="_blank" class="text-white text-decoration-none">
-                <i class="fa-brands fa-instagram fa-sm me-1" style="color: #daa0a0;"></i>
-                All photographs made on this page are made by Rob Verschoor.
-            </a>
-        </p>
+        <!-- Left Text -->
+        <div class="about-text">
+            <h1>About Us</h1>
+            <p>We are Maria and Etienne, and together we form the dynamic duo band, Fifth of April.</p>
+            <p>While we love creating and playing our original music, we also enjoy performing a wide range of covers.</p>
+            <p>Our style primarily focuses on pop songs, singer-songwriter, and indie-rock music.</p>
+            <p>Our name, Fifth of April, is no coincidence, we were both born on the same date.</p>
+        </div>
 
-        <div class="row mb-4">
-            <div class="col-md-6">
-                                <img src="{{ url_for('static', filename='images/Maria_en_etienne1.jpg') }}" class="img-fluid rounded mb-3" alt="Maria en Etienne">
-            </div>
-            <div class="col-md-6">
-                <img src="{{ url_for('static', filename='images/Maria_en_etienne2.jpg') }}" class="img-fluid rounded mb-3" alt="Maria en Etienne">
-            </div>
-        </div>
+        <!-- Right Slideshow -->
+        <div class="slideshow-container">
 
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <img src="{{ url_for('static', filename='images/Maria_en_etienne3.jpg') }}" class="img-fluid rounded mb-3" alt="Maria en Etienne">
-            </div>
-        </div>
-    </div>
+            <div class="mySlides">
+                <img src="{{ url_for('static', filename='images/Maria_en_etienne1.jpg') }}" alt="Maria en Etienne">
+            </div>
 
+            <div class="mySlides">
+                <img src="{{ url_for('static', filename='images/Maria_en_etienne2.jpg') }}" alt="Maria en Etienne">
+            </div>
+
+            <div class="mySlides">
+                <img src="{{ url_for('static', filename='images/Maria_en_etienne3.jpg') }}" alt="Maria en Etienne">
+            </div>
+
+            <!-- Next/previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+    </div>
 </div>
-<footer class="footer text-center">
-    <p>&copy; <span id="year"></span> Fifth of April — All rights reserved.</p>
 
-        <a href="{{ url_for('aboutus_nl') }}" class="btn btn-outline-light mt-2">
-        Vertalen naar het Nederlands?
-    </a>
+<footer class="footer text-center">
+    <p>&copy; <span id="year"></span> Fifth of April — All rights reserved.</p>
+    <a href="{{ url_for('aboutus_nl') }}" class="btn btn-outline-light mt-2">
+        Vertalen naar het Nederlands?
+    </a>
 </footer>
-</body>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== Slideshow JS =====
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
 </script>
 
+</body>
 </html>

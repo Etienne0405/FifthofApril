@@ -1,0 +1,128 @@
+/* ============================ */
+/* GLOBAL STYLES & LAYOUT       */
+/* ============================ */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* No scrolling */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg, #c79494, #7c8655);
+    color: #e2e2e2;
+}
+
+/* ============================ */
+/* PAGE WRAPPER                 */
+/* ============================ */
+.page-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================ */
+/* MAIN CONTENT AREA            */
+/* ============================ */
+.content-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* spacing between cards */
+    padding: 20px;
+}
+
+/* ============================ */
+/* CONTACT CARD & MESSAGE FORM  */
+/* ============================ */
+.contact-card,
+.message-form {
+    width: 500px;  /* larger width */
+    height: 600px; /* larger height */
+    padding: 30px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+/* ============================ */
+/* HEADINGS                     */
+/* ============================ */
+.contact-card h2,
+.message-form h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+/* ============================ */
+/* CONTACT LIST ITEMS           */
+/* ============================ */
+.contact-card .list-group-item {
+    background: none !important;
+    border: none !important;
+    color: #f2f2f2;
+    padding: 12px 0;
+    font-size: 1.1rem;
+
+    display: flex;
+    align-items: center; /* vertically center icon + text */
+}
+
+.contact-card .list-group-item i {
+    width: 15px;        /* fixed width for all icons */
+    text-align: center; /* ensures text aligns horizontally */
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-card .list-group-item a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 12px;  /* spacing between icon and text */
+    transition: 0.3s ease;
+}
+
+.contact-card .list-group-item a:hover {
+    color: #f3c1c1;
+}
+
+.contact-card .badge.bg-secondary {
+    background: rgba(255,255,255,0.3) !important;
+    color: #ffffff;
+}
+
+/* ============================ */
+/* FORM ELEMENTS                */
+/* ============================ */
+.message-form label {
+    color: #ffffff;
+}
+
+.message-form .form-control {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #ffffff;
+}
+
+.message-form .form-control:focus {
+    background: rgba(0,0,0,0.45);
+    border-color: #f3c1c1;
+    color: #ffffff;
+}
+
+.message-form .btn-outline-light {
+    border-radius: 6px;
+    transition: 0.3s ease;
+    margin-top: auto; /* push button to bottom if extra space */
+}
+
+.message-form .btn-outline-light:hover {
+    background: #ffffff;
+    color: #000000 !important;
+}
+

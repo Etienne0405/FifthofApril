@@ -1,0 +1,117 @@
+/* ======================================= */
+/* CLEAN, STRAKKE, FIJNE STYLING VOOR GIGS PAGE */
+/* ======================================= */
+
+/* GLOBAL */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding-top: 60px;
+    overflow: hidden; /* disables scrolling */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e2e2e2;
+    /* De achtergrond van de body kan behouden blijven voor de rest van de pagina */
+    background: linear-gradient(90deg, #c79494, #7c8655);
+}
+
+/* ======================================= */
+/* 2. NAVIGATION (NAVBAR)                  */
+/* ======================================= */
+
+.navbar {
+    /* **BELANGRIJK:** Maakt de achtergrond transparant met een lichte overlay */
+    background: rgba(0, 0, 0, 0.75) !important; 
+    padding-top: 0px;
+    width: 100%; /* Zorg dat de navbar de volle breedte inneemt */
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #e2e2e2 !important;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+    color: #daa0a0 !important;
+}
+
+.navbar .nav-link.d-inline {
+    padding: 0 12px;
+}
+
+/* Remove border from last element (geen border gedefinieerd, maar goed voor de zekerheid) */
+.navbar div > .nav-link.d-inline:last-child {
+    border-right: none;
+}
+
+/* MAIN WRAPPER */
+.main-content-wrapper {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+/* TITLE */
+h1 {
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+    margin-bottom: 25px;
+}
+
+/* GIGS LIST */
+.list-group-item {
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f4f4f4;
+    padding: 1rem;
+    font-size: 1.05rem;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(3px);
+    transition: 0.25s ease;
+}
+
+.list-group-item strong {
+    color: #ffe3e3;
+    font-size: 1.15rem;
+}
+
+/* DIVIDER */
+hr {
+    border-color: #ffffff40 !important;
+}
+
+/* LINK BELOW */
+.main-content-wrapper a {
+    color: #ffdcdc;
+    text-decoration: underline;
+    transition: 0.3s ease;
+}
+
+.main-content-wrapper a:hover {
+    color: #ffffff;
+}
+
+/* FOOTER */
+.footer {
+    background: rgba(0, 0, 0, 0.75) !important;
+    color: #e2e2e2;
+    padding: 18px 0;
+    font-size: 1rem;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer .btn {
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.footer .btn:hover {
+    background: #ffffff;
+    color: #000000 !important;
+}

@@ -1,0 +1,44 @@
+.content-flex {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 80%;
+    gap: 60px; /* hier voeg je extra ruimte toe tussen de twee boxes */
+}
+
+.slideshow-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Next & previous buttons fixed aan de zijkanten */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* center verticaal */
+    width: auto;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+    user-select: none;
+    background: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.prev {
+    left: 0px; /* buiten de linkerkant van de slideshow */
+}
+
+.next {
+    right: -30px; /* buiten de rechterkant van de slideshow */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}

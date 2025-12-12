@@ -1,0 +1,21 @@
+/* FOOTER */
+.footer {
+    background: rgba(0, 0, 0, 0.75) !important;
+    color: #e2e2e2;
+    padding: 18px 0;
+    font-size: 1rem;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer .btn {
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.footer .btn:hover {
+    background: #ffffff;
+    color: #000000 !important;
+}
