@@ -1,44 +1,108 @@
+/* ======================================= */
+/* ABOUT US PAGE STYLE                      */
+/* ======================================= */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* disables page scrolling */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(90deg, #c79494, #7c8655);
+    color: #e2e2e2;
+}
+
+.main-content-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Flex container for text + slideshow */
 .content-flex {
     display: flex;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     height: 80%;
-    gap: 60px; /* hier voeg je extra ruimte toe tussen de twee boxes */
+    gap: 60px;
 }
 
+/* Left text column */
+.about-text {
+    flex: 1;
+    overflow-y: auto; /* scroll inside text box if content is long */
+    padding-right: 20px;
+}
+
+.about-text h1 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Right slideshow column */
 .slideshow-container {
     flex: 1;
     position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Next & previous buttons fixed aan de zijkanten */
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto; /* maintain aspect ratio */
+    object-fit: contain; /* show full image */
+    border-radius: 10px;
+}
+
+/* Side Buttons Covering Only Y-Axis of the Image */
 .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%); /* center verticaal */
-    width: auto;
-    padding: 12px;
-    color: white;
+    top: 0;               /* align to top of the slideshow */
+    bottom: 0;            /* stretch to bottom */
+    width: 50px;          /* fixed width on the sides */
+    color: #ffffff;
     font-weight: bold;
-    font-size: 20px;
-    border-radius: 50%;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* centers the arrow both vertically and horizontally */
+    border-radius: 12px;
     user-select: none;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 10;
-}
-
-.prev {
-    left: 0px; /* buiten de linkerkant van de slideshow */
-}
-
-.next {
-    right: -30px; /* buiten de rechterkant van de slideshow */
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.6);
 }
+
+.prev {
+    left: -50px; /* flush with left side of the image */
+    bottom: -400px;
+}
+
+.next {
+    right: -50px; /* flush with right side of the image */
+    bottom: -400px;
+}
+
